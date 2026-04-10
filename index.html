@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マルチ衛星リアルタイムトラッカー</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="header-container">
+        <h2>マルチ衛星リアルタイムトラッカー (最大3機)</h2>
+        <div class="controls">
+            <label for="satInput">衛星を追加: </label>
+            <input type="text" id="satInput" list="satList" placeholder="名前を検索、またはNORAD IDを入力" disabled>
+            <datalist id="satList"></datalist>
+            <button class="add-btn" id="addBtn" disabled>追加</button>
+            <span id="loadingText"></span>
+        </div>
+        <div id="observerStatus">観測地: GPS現在地 (取得中...)</div>
+    </div>
+
+    <div class="main-layout">
+        <div class="map-section">
+            <div id="map"></div>
+        </div>
+        <div class="info-section">
+            <div class="info-container" id="infoContainer"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-polylinedecorator@1.6.4/dist/leaflet.polylineDecorator.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/satellite.js/5.0.0/satellite.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
