@@ -16,6 +16,14 @@
             <input type="text" id="satInput" list="satList" placeholder="名前を検索、またはNORAD IDを入力" disabled>
             <datalist id="satList"></datalist>
             <button class="add-btn" id="addBtn" disabled>追加</button>
+            
+            <label for="mapStyle" style="margin-left: 15px;">地図: </label>
+            <select id="mapStyle" class="map-select">
+                <option value="osm" selected>標準 (OpenStreetMap)</option>
+                <option value="satellite">衛星写真 (Esri)</option>
+                <option value="light">ライトモード</option>
+            </select>
+
             <span id="loadingText"></span>
         </div>
         <div id="observerStatus">観測地: GPS現在地 (取得中...)</div>
