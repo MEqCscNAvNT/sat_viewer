@@ -3,119 +3,68 @@ body {
     margin: 0; 
     padding: 10px 20px; 
     background-color: #f4f4f9; 
+    transition: background-color 0.3s;
 }
 
-/* ★ ヘッダー周りのデザイン変更 ★ */
-.header-container {
-    text-align: center;
-    margin-bottom: 15px;
-}
-h2 { 
-    color: #333; 
-    margin: 0 0 10px 0; 
-    font-size: 22px; 
-}
-.controls { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    flex-wrap: wrap; 
-    gap: 5px; 
-    margin-bottom: 5px; 
-}
-#observerStatus {
-    font-size: 14px;
-    color: #444;
-}
-#loadingText { 
-    font-weight: bold; 
-    color: #007bff; 
-    font-size: 14px; 
-    margin-left: 10px;
-}
+.header-container { text-align: center; margin-bottom: 15px; }
+h2 { color: #333; margin: 0 0 10px 0; font-size: 22px; }
+.controls { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 5px; margin-bottom: 5px; }
+#observerStatus { font-size: 14px; color: #444; }
+#loadingText { font-weight: bold; color: #007bff; font-size: 14px; margin-left: 10px; }
 
-input[type="text"] { 
-    padding: 8px; 
-    font-size: 16px; 
-    border-radius: 4px; 
-    width: 320px; 
-    max-width: 100%;
-    border: 1px solid #ccc; 
-}
-
-button.add-btn { 
-    padding: 8px 15px; 
-    font-size: 16px; 
-    cursor: pointer; 
-    border-radius: 4px; 
-    border: none; 
-    background-color: #007bff; 
-    color: white; 
-}
-
+input[type="text"] { padding: 8px; font-size: 16px; border-radius: 4px; width: 320px; max-width: 100%; border: 1px solid #ccc; }
+button.add-btn { padding: 8px 15px; font-size: 16px; cursor: pointer; border-radius: 4px; border: none; background-color: #007bff; color: white; }
 button.add-btn:hover { background-color: #0056b3; }
 button:disabled { background-color: #cccccc; cursor: not-allowed; }
 
-/* レスポンシブ用レイアウト */
-.main-layout {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    max-width: 1600px;
-    margin: 0 auto;
-}
+.map-select { padding: 8px; font-size: 14px; border-radius: 4px; border: 1px solid #ccc; background-color: #fff; cursor: pointer; }
 
-.map-section {
-    flex: 1 1 70%;
-}
-
-#map { 
-    width: 100%; 
-    aspect-ratio: 16 / 9; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-}
-
-.info-section {
-    flex: 1 1 30%;
-    display: flex;
-    flex-direction: column;
-}
-
-.info-container { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 15px; 
-    max-height: 80vh; 
-    overflow-y: auto;
-    padding-right: 5px;
-}
-
-.info-card { 
-    background: #fff; 
-    padding: 15px; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-    font-size: 14px;
-}
-
-.info-card h4 { 
-    margin: 0 0 10px 0; 
-    font-size: 16px; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-}
-
-.info-card button.del-btn { 
-    cursor: pointer; border: none; background: #ff4d4d; color: white; border-radius: 4px; padding: 2px 6px; font-size: 12px; 
-}
-
+.main-layout { display: flex; flex-direction: row; gap: 20px; max-width: 1600px; margin: 0 auto; }
+.map-section { flex: 1 1 70%; }
+#map { width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.info-section { flex: 1 1 30%; display: flex; flex-direction: column; }
+.info-container { display: flex; flex-direction: column; gap: 15px; max-height: 80vh; overflow-y: auto; padding-right: 5px; }
+.info-card { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 14px; }
+.info-card h4 { margin: 0 0 10px 0; font-size: 16px; display: flex; justify-content: space-between; align-items: center; }
+.info-card button.del-btn { cursor: pointer; border: none; background: #ff4d4d; color: white; border-radius: 4px; padding: 2px 6px; font-size: 12px; }
 .info-card div { margin-bottom: 5px; }
 .info-value { font-weight: bold; font-family: monospace; color: #222; }
 .aos-los { color: #d35400; background: #fff3e0; padding: 4px; border-radius: 4px; font-size: 13px; margin-top: 8px; }
+
+button.toggle-plot-btn {
+    width: 100%; padding: 6px; background-color: #e9ecef; border: 1px solid #ccc;
+    border-radius: 4px; cursor: pointer; font-size: 12px; color: #333; margin-top: 10px;
+}
+button.toggle-plot-btn:hover { background-color: #dee2e6; }
+.polar-plot-container { margin-top: 10px; padding: 10px; background: #f8f9fa; border-radius: 6px; border: 1px solid #ddd; text-align: center; }
+.pass-details { display: flex; justify-content: space-around; font-size: 12px; margin-bottom: 10px; background: #fff; padding: 5px; border-radius: 4px; border: 1px solid #eee; }
+.polar-canvas { background: #fff; border-radius: 50%; box-shadow: inset 0 0 5px rgba(0,0,0,0.1); }
+
+.theme-osm .leaflet-marker-icon { filter: drop-shadow(1px 1px 0px #fff) drop-shadow(-1px -1px 0px #fff) drop-shadow(0px 0px 4px #000); }
+.theme-satellite .leaflet-marker-icon { filter: drop-shadow(0px 0px 4px #fff) drop-shadow(0px 0px 8px #fff); }
+.theme-light .leaflet-marker-icon { filter: drop-shadow(1px 1px 0px #000) drop-shadow(-1px -1px 0px #000) drop-shadow(0px 0px 5px #000); }
 
 @media (max-width: 900px) {
     .main-layout { flex-direction: column; }
     .info-container { max-height: none; overflow-y: visible; }
 }
+
+/* ★ 秘匿モード ★ */
+.x-m { background-color: #00050a !important; font-family: 'Courier New', Courier, monospace !important; }
+.x-m h2, .x-m label, .x-m span, .x-m div { color: #ccffff !important; text-shadow: 0 0 5px #00ffff; }
+.x-m h2 { font-weight: normal; border-bottom: 1px solid #00ffff; display: inline-block; padding-bottom: 5px; }
+
+.x-m .info-card, .x-m .polar-plot-container, .x-m .pass-details { background: rgba(0, 30, 50, 0.8) !important; border: 1px solid #00ffff !important; box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.1); }
+.x-m input, .x-m select { background: #001122 !important; border: 1px solid #00ffff !important; color: #ccffff !important; }
+.x-m button { background: #002244 !important; border: 1px solid #00ffff !important; color: #ccffff !important; box-shadow: 0 0 8px rgba(0, 255, 255, 0.5); transition: background-color 0.2s; }
+.x-m button.del-btn { background: #400 !important; color: #f00 !important; border-color: #f00 !important; text-shadow: none; box-shadow: none; }
+
+.x-m .leaflet-container { background: #000 !important; border: 1px solid #00ffff; border-radius: 0; box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
+.x-m .polar-canvas { background: #000 !important; border: 1px solid #00ffff; border-radius: 50%; box-shadow: 0 0 10px #00ffff; }
+.x-m .aos-los { background: transparent !important; border: 1px dashed #00ffff; }
+.x-m .leaflet-marker-icon { filter: drop-shadow(0 0 5px #00ffff) drop-shadow(0 0 10px #00ffff) !important; }
+
+/* ★ 修正: 境界線（ベクターデータ）に直接グロー効果を適用するクラス ★ */
+.x-coast { filter: drop-shadow(0 0 2px #ffffff); }
+.x-border { filter: drop-shadow(0 0 1px #ffffff); }
+.x-grid { filter: drop-shadow(0 0 2px rgba(0, 255, 0, 0.5)); }
